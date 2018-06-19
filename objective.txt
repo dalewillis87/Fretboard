@@ -1,0 +1,10 @@
+Draw a guitar fretboard.
+
+6 strings
+12 frets
+nut = tuning key
+
+foreach tuning as string {
+	print the infinite iterator as per the limit iterator using tuning key as initial
+	print line break
+}

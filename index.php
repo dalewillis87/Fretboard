@@ -1,7 +1,9 @@
 <?php
 $frets = ['Nut', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI'];
-$strings = ['E', 'A', 'D', 'G', 'B', 'E'];
+$strings = ['E', 'B', 'G', 'D', 'A', 'E'];
 $tempered = ['A', 'A#/Bb', 'B', 'C', 'C#/Db', 'D', 'D#/Eb', 'E', 'F', 'F#/Gb', 'G', 'G#/Ab'];
+$tuning = array(32, 27, 23, 18, 13, 8);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,14 +20,29 @@ $tempered = ['A', 'A#/Bb', 'B', 'C', 'C#/Db', 'D', 'D#/Eb', 'E', 'F', 'F#/Gb', '
 			<?php $num_items = count($frets); for($i = 0; $i < $num_items; $i++) {echo "<th>$frets[$i]</th>";}?>
 		</tr>
 		<?php
-			$num_items = count($strings);
-			for ($i = 0; $i <$num_items; $i++) {
-				echo '<tr><td class="nut"></td>';
-                $num_frets = count($frets);
-                for ($e = 0; $e < $num_frets - 1; $e++) {
-                    echo '<td></td>';
-                }
-                echo '</tr>';
+			$count_items = count($strings);
+			$num_string = 6;
+		
+			$tempered = new ArrayIterator($tempered);
+			$tempered = new InfiniteIterator($tempered);
+			$i = 0;
+			
+			foreach ($tuning as $initial) {
+				echo '<tr class="string';
+				echo $num_string;
+				echo '"><td class="nut">';
+				echo $strings[$i];
+				echo '</td>';
+				
+				
+				foreach (new LimitIterator($tempered, $initial, (count($frets) -1)) as $note) {
+					echo '<td>';
+					echo $note;
+					echo '</td>';
+				}				
+				echo '</tr>';
+				$num_string--;
+				$i++;
 			}
 		?>
 	</table>

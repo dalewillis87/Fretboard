@@ -1,10 +1,19 @@
-Draw a guitar fretboard.
+Code = X means objective met. - means objective partially met. indent means objective related to parent
 
-6 strings
-12 frets
-nut = tuning key
+Draw a Fretboard using the Browser X
 
-foreach tuning as string {
-	print the infinite iterator as per the limit iterator using tuning key as initial
-	print line break
-}
+Use php to create the same code dynamically - 
+
+	Used Loops to draw table data and populate fields X
+
+	Create code to set tuning array driven by data 
+
+Create JS to change background colour of particular <td> nodes - 
+
+	Define class of <td> nodes using data X 
+	
+	Define queryselector which allows CSS manipulation
+	
+BUG REPORT.
+
+Change to field in class .nut does not impact upon rest of the string.

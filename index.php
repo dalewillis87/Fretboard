@@ -1,7 +1,7 @@
 <?php
 $frets = ['Nut', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI'];
 $strings = ['E', 'B', 'G', 'D', 'A', 'E'];
-$tempered = ['A', 'A#/Bb', 'B', 'C', 'C#/Db', 'D', 'D#/Eb', 'E', 'F', 'F#/Gb', 'G', 'G#/Ab'];
+$tempered = ['A', 'A_Bb', 'B', 'C', 'C_Db', 'D', 'D_Eb', 'E', 'F', 'F_Gb', 'G', 'G_Ab'];
 $tuning = array(32, 27, 23, 18, 13, 8);
 $num_string = 6;
 

@@ -16,7 +16,9 @@ Create JS to change background colour of particular <td> nodes -
 		
 		Create toggle button for turning black note subscript on and off.
 		
-Develop code for defining scales
+Return "#/" to the html before rendering
+		
+Develop code for major and minor scales
 	
 BUG REPORT.
 

@@ -1,10 +1,20 @@
 <?php
 $frets = ['Nut', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI'];
 $strings = ['E', 'B', 'G', 'D', 'A', 'E'];
-$tempered = ['A', 'A_Bb', 'B', 'C', 'C_Db', 'D', 'D_Eb', 'E', 'F', 'F_Gb', 'G', 'G_Ab'];
-$tuning = array(32, 27, 23, 18, 13, 8);
+$tempered = ['A', 'A#/Bb', 'B', 'C', 'C#/Db', 'D', 'D#/Eb', 'E', 'F', 'F#/Gb', 'G', 'G#/Ab'];
 $num_string = 6;
 
+foreach ($strings as $string) {
+	$j = 0;
+	$e = 0;
+	foreach ($tempered as $note) {
+		if ($note == $string) {
+			$tuning[] = $e + 1;
+		}
+	$e++;
+	}
+	$j++;
+}
 
 $tempered = new ArrayIterator($tempered);
 $tempered = new InfiniteIterator($tempered);
@@ -30,10 +40,16 @@ $tempered = new InfiniteIterator($tempered);
 		$i = 0;
 
 		foreach ($tuning as $initial) {
-			echo '<tr class="string', $num_string, '"><td class="nut,', $strings[$i], '">', $strings[$i], '</td>';
+$string_nut = <<< NUT
+				<tr class="string$num_string"><td class="nut, $strings[$i]">$strings[$i]</td>
+NUT;
+			echo $string_nut;
 
 			foreach (new LimitIterator($tempered, $initial, (count($frets) -1)) as $note) {
-				echo '<td class="', $note, '">', $note, '</td>';
+$string_rest = <<< REST
+				<td class="$note">$note</td>
+REST;
+				echo $string_rest;
 			}
 			echo '</tr>';
 			$num_string--;

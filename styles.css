@@ -23,6 +23,7 @@ th, td {
 
 
 /* for view as black and white keys */
-/* [class$=b] {
+[class$=b] {
     background-color: black;
-} */
+    color: white;
+}

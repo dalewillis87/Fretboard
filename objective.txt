@@ -6,13 +6,17 @@ Use php to create the same code dynamically -
 
 	Used Loops to draw table data and populate fields X
 
-	Create code to set tuning array driven by data 
+	Create code to set tuning array driven by data X
 
 Create JS to change background colour of particular <td> nodes - 
 
 	Define class of <td> nodes using data X 
 	
-	Define queryselector which allows CSS manipulation
+	Define queryselector which allows CSS manipulation -- Created stylesheet to address this issue X
+		
+		Create toggle button for turning black note subscript on and off.
+		
+Develop code for defining scales
 	
 BUG REPORT.
 

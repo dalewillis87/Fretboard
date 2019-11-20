@@ -1,19 +1,18 @@
 <?php
 $frets = ['Nut', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI'];
 $strings = ['E', 'B', 'G', 'D', 'A', 'E'];
-$tempered = ['A', 'A#/Bb', 'B', 'C', 'C#/Db', 'D', 'D#/Eb', 'E', 'F', 'F#/Gb', 'G', 'G#/Ab'];
+$tempered = ['A', 'A_Bb', 'B', 'C', 'C_Db', 'D', 'D_Eb', 'E', 'F', 'F_Gb', 'G', 'G_Ab'];
 $num_string = 6;
+$note_pos = 0;
 
 foreach ($strings as $string) {
-	$j = 0;
-	$e = 0;
+	$fret_position = 0;
 	foreach ($tempered as $note) {
 		if ($note == $string) {
-			$tuning[] = $e + 1;
+			$tuning[] = $fret_position + 1;
 		}
-	$e++;
-	}
-	$j++;
+	$fret_position++;
+	};
 }
 
 $tempered = new ArrayIterator($tempered);
@@ -37,11 +36,9 @@ $tempered = new InfiniteIterator($tempered);
 			<?php $num_items = count($frets); for($i = 0; $i < $num_items; $i++) {echo "<th>$frets[$i]</th>";}?>
 		</tr>
 		<?php
-		$i = 0;
-
 		foreach ($tuning as $initial) {
 $string_nut = <<< NUT
-				<tr class="string$num_string"><td class="nut, $strings[$i]">$strings[$i]</td>
+				<tr class="string$num_string"><td class="nut, $strings[$note_pos]">$strings[$note_pos]</td>
 NUT;
 			echo $string_nut;
 
@@ -53,7 +50,7 @@ REST;
 			}
 			echo '</tr>';
 			$num_string--;
-			$i++;
+			$note_pos++;
 		}
 		?>
 	</table>

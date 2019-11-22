@@ -20,8 +20,19 @@ Return "#/" to the html before rendering X
 	
 	Added function to swap underscores with above X
 		
-Develop code for major and minor scales
+Develop code for major and minor scales.
+
+Develop functions to allow easier drawing of multiple fretboards.
+
+	Function for setting array to infinity
+	
+	Function for returning array from infinity to initial length
+	
+	Function for resetting $num_string and $note_pos
+	
+	Function for setting $tuning[]
 	
 BUG REPORT.
 
-Change to field in class .nut does not impact upon rest of the string. - Fixed 
+Change to field in class .nut does not impact upon rest of the string. - Fixed
+Drawing new fretboard requires lots of resetting.

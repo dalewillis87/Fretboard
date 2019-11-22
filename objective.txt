@@ -2,7 +2,7 @@ Code = X means objective met. - means objective partially met. indent means obje
 
 Draw a Fretboard using the Browser X
 
-Use php to create the same code dynamically - 
+Use php to create the same code dynamically X 
 
 	Used Loops to draw table data and populate fields X
 
@@ -16,10 +16,12 @@ Create JS to change background colour of particular <td> nodes -
 		
 		Create toggle button for turning black note subscript on and off.
 		
-Return "#/" to the html before rendering
+Return "#/" to the html before rendering X
+	
+	Added function to swap underscores with above X
 		
 Develop code for major and minor scales
 	
 BUG REPORT.
 
-Change to field in class .nut does not impact upon rest of the string.
+Change to field in class .nut does not impact upon rest of the string. - Fixed 

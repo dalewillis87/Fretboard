@@ -38,15 +38,18 @@ $tempered = new InfiniteIterator($tempered);
 		<?php
 		foreach ($tuning as $initial) {
 $string_nut = <<< NUT
-				<tr class="string$num_string"><td class="nut, $strings[$note_pos]">$strings[$note_pos]</td>
+				<tr class="string$num_string"><td class="nut, $strings[$note_pos]">
 NUT;
 			echo $string_nut;
+			echo str_replace ("_", "#/", $strings[$note_pos]) . "</td>";
+			
 
 			foreach (new LimitIterator($tempered, $initial, (count($frets) -1)) as $note) {
 $string_rest = <<< REST
-				<td class="$note">$note</td>
+				<td class="$note">
 REST;
 				echo $string_rest;
+				echo str_replace ("_", "#/", $note) . "</td>";
 			}
 			echo '</tr>';
 			$num_string--;
@@ -55,3 +58,4 @@ REST;
 		?>
 	</table>
   </body>
+ 
